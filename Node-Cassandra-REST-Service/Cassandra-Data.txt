@@ -1,0 +1,41 @@
+
+
+cassandra host name looked upon is 'cassandranode'
+Edit this name if required in routes/index.js file.
+
+To start the cassandra server
+
+<Install_Dir>/apache-cassandra/bin/ directory
+
+Run as backgroubd process >cassandra
+
+ Run in foreground >cassandra -f
+
+
+ It allows access to clients on port 9042
+
+To Check the status of the Cassandra nodes in your cluster - Go to the /<Install_Dir>/apache-cassandra/bin/ directory and type the command as 
+ ./nodetool status    
+If the status for all the nodes shows as UN , then the nodes are up and running. If the status for any node shows as DN , then that particular node is down.
+When a node is down, it usually means that the node did not start properly. It can take several minutes for the node to start. Ensure the node is running or there are no network problems preventing the node from communicating with other nodes in the cluster. Run ./nodetool status again in a few minutes until the node is in UN status.
+
+On Unix/linux the cassnadra can be configured to run as service.
+
+Verify Cassandra log files - Go to /<Install_Dir>/apache-cassandra/logs/system.log.
+
+Check the database structutre in cassandra
+
+cqlsh -u '<username>' -p '<password>' -f <path>/booksCatalog.cql
+
+Import the data file to create the data structure needed to run the aplication.
+
+cqlsh -f booksCatalog.cql
+
+Once the cassandra host is started and created the datastutcture as needed.
+Run the Node REST service application 
+>npm start
+ Message cassnadra connected will be displayed.
+
+https://radiostud.io/creating-restful-api-using-nodeexpress/
+
+

@@ -1,0 +1,20 @@
+The cassandra database host name looked upon is 'cassandra-node'
+Edit this name if required in routes/index.js file.
+  
+
+Get Methods
+  http://localhost:3000/
+  http://localhost:3000/books
+  http://localhost:3000/book/view/ID  
+  http://localhost:3000/book/view/6
+
+  POST : http://localhost:3000/book/add
+    with RequestBody type is URLEncoded form data
+
+  PUT : http://localhost:3000/book/modify/ID
+
+    with RequestBody type is URLEncoded form data
+
+  Delete : http://localhost:3000/book/delete/id
+  
+
